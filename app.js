@@ -135,8 +135,8 @@ spans.forEach((span, index) => {
 //section 4 timeline
 const section4Tl = gsap.timeline({
     scrollTrigger: {
-        trigger: '.section3',
-        start: 'bottom top',
+        trigger: '.section4',
+        start: 'top bottom',
         end: '+=600',
         scrub: true,
         markers: true,
@@ -145,11 +145,28 @@ const section4Tl = gsap.timeline({
 });
 
 //section4 horizontally
-section4Tl.to('.section4', {
+/* section4Tl.to('.section4', {
     x: '0vw',
     duration: 3,
     ease: 'power4.out',
-});
+}); */
+
+//portfolio-item
+section4Tl.from('.section4 .portfolio-item:first-child', {
+    x: '100vw',
+    opacity: 0,
+    duration: 2,
+    ease: 'power4.out',
+},
+"+=1");
+
+section4Tl.from('.section4 .portfolio-item:nth-child(2)', {
+    x: '100vw',
+    opacity: 0,
+    duration: 2,
+    ease: 'power4.out',
+},
+"+=1");
 
 //horizontal scroll
 let horizontalSections = document.querySelectorAll('.horizontal-sections > section');
@@ -166,3 +183,4 @@ gsap.to(horizontalSections, {
         markers: true,
     }
 });
+
