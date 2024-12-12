@@ -184,3 +184,40 @@ gsap.to(horizontalSections, {
     }
 });
 
+//section5
+//splitText
+function splitText(selector) { 
+    const elements = document.querySelectorAll(selector); 
+    elements.forEach(el => { 
+        const text = el.innerText; 
+        el.innerHTML = ''; 
+        text.split('').forEach(char => { 
+            const span = document.createElement('span'); 
+            span.innerText = char; 
+            el.appendChild(span); 
+        }); 
+    }); 
+}
+
+splitText('.section5 h2');
+
+const section5Tl = gsap.timeline({
+    scrollTrigger: {
+        trigger: '.section5',
+        start: 'center bottom',
+        end: '+=500',
+        scrub: 1,
+        yoyo: true,
+        markers: true,
+    }
+});
+
+//letters h2
+const characters = document.querySelectorAll('.section5 h2 span'); 
+section5Tl.from(characters, { 
+    y: '-50vh', 
+    opacity: 0, 
+    duration: 3, 
+    stagger: 0.05, 
+    ease: 'power4.out', 
+});
