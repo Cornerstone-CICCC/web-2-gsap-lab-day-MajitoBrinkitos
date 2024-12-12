@@ -209,6 +209,7 @@ const section5Tl = gsap.timeline({
         scrub: 1,
         yoyo: true,
         markers: true,
+        toggleActions: 'restart pause resume none',
     }
 });
 
@@ -220,4 +221,29 @@ section5Tl.from(characters, {
     duration: 3, 
     stagger: 0.05, 
     ease: 'power4.out', 
-});
+}, "+=1");
+
+//p
+section5Tl
+.from('.section5 p', {
+    y: '60vh',
+    opacity: 0,
+    duration: 2,
+    stagger: 0.05,
+    ease: 'power4.out',
+}, "-=1");
+
+//button
+section5Tl.from('.section5 button', {
+    y: '60vh',
+    opacity: 0,
+    duration: 2,
+    stagger: 0.05,
+    ease: 'power4.out',
+}, "-=1");
+
+//image
+section5Tl
+.from('.section5 img', {
+    x: '100vw',
+})
