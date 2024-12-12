@@ -94,14 +94,14 @@ section2Tl
     opacity: 0,
     duration: 5,
     ease: 'power4.out',
-});
+}, "+=1");
 
-//section 3
+//section 3 timeline
 const section3Tl = gsap.timeline({
     scrollTrigger: {
         trigger: '.section3',
-        start: 'top center',
-        end: '+=400',
+        start: 'center bottom',
+        end: '+=700',
         scrub: 1,
         markers: true,
         toggleActions: 'restart pause resume none',
@@ -109,67 +109,43 @@ const section3Tl = gsap.timeline({
 });
 
 //skills
-section3Tl
-.from('.section3 h2', {
+section3Tl.from('.section3 h2', {
     scale: 3,
     duration: 2,
     ease: 'power4.out',
 });
 
-//spans
-section3Tl.fromTo('.section3 p span:first-child', {
-    y: '100vh',
-    duration: 2,
-    ease: 'power4.out',
-    backgroundColor: 'white',
-    color: 'black',
-}, {
-    y: '0vh',
-    duration: 2,
-    ease: 'power4.out',
-    backgroundColor: 'white',
-    color: 'black',
+const spans = document.querySelectorAll('.section3 p span');
+
+spans.forEach((span, index) => {
+    section3Tl.fromTo(span, {
+        y: '100vh',
+        opacity: 0,
+        backgroundColor: 'white',
+        color: 'black'
+    }, {
+        y: '0vh',
+        opacity: 1,
+        duration: 2,
+        ease: 'power4.out'
+    }, "-=1.5")
 });
 
-
-section3Tl.fromTo('.section3 p span:nth-child(2)', {
-    y: '100vh',
-    duration: 2,
-    ease: 'power4.out',
-    backgroundColor: 'white',
-    color: 'black',
-}, {
-    y: '0vh',
-    duration: 2,
-    ease: 'power4.out',
-    backgroundColor: 'white',
-    color: 'black',
+//section 4 timeline
+const section4Tl = gsap.timeline({
+    scrollTrigger: {
+        trigger: '.section3',
+        start: 'center bottom',
+        end: '+=600',
+        scrub: true,
+        markers: true,
+        toggleActions: 'restart pause resume none',
+    }
 });
 
-section3Tl.fromTo('.section3 p span:nth-child(3)', {
-    y: '100vh',
-    duration: 2,
+//section4 horizontally
+section4Tl.to('.section4', {
+    x: '100vw',
+    duration: 3,
     ease: 'power4.out',
-    backgroundColor: 'white',
-    color: 'black',
-}, {
-    y: '0vh',
-    duration: 2,
-    ease: 'power4.out',
-    backgroundColor: 'white',
-    color: 'black',
-});
-
-section3Tl.fromTo('.section3 p span:nth-child(4)', {
-    y: '100vh',
-    duration: 2,
-    ease: 'power4.out',
-    backgroundColor: 'white',
-    color: 'black',
-}, {
-    y: '0vh',
-    duration: 2,
-    ease: 'power4.out',
-    backgroundColor: 'white',
-    color: 'black',
 });
