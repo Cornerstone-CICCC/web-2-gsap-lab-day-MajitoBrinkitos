@@ -44,10 +44,54 @@ section1Tl
     opacity: 2,
     duration: 1,
     ease: 'power4.out'
-});
+},
+"-=1");
 
 //geek dog image
 section1Tl
 .from('.section1 img', {
     y: '100vh',
 })
+
+//section 2 timeline
+const section2Tl = gsap.timeline({
+    scrollTrigger: {
+        trigger: '.section2',
+        start: 'top center',
+        end: '+=600',
+        scrub: 1,
+        yoyo: true,
+        markers: true,
+        toggleActions: 'restart pause resume none',
+    }
+});
+
+//About
+section2Tl.from('.section2 h2 span:first-child', {
+    y: '-100vh',
+    opacity: 0,
+    duration: 2,
+    ease: 'none',
+    stagger: 0.2,
+},
+"+=1");
+
+//Me
+section2Tl.from('.section2 h2 span:nth-child(2)', {
+    y: '-100vh',
+    opacity: 0,
+    duration: 2,
+    ease: 'none',
+    stagger: 0.2,
+},
+"-=1");
+
+//p
+section2Tl
+.from('.section2 p', {
+    transformOrigin: 'center center',
+    rotateY: 90,
+    opacity: 0,
+    duration: 5,
+    ease: 'power4.out',
+});
