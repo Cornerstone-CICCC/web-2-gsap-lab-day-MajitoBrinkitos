@@ -5,7 +5,7 @@ gsap.registerPlugin(ScrollTrigger);
 const section1Tl = gsap.timeline({
         trigger: '.section1',
         start: 'top top',
-        end: '+=400',
+        end: '+=500',
         scrub: 1,
         yoyo: true,
         markers: true,
@@ -58,7 +58,7 @@ const section2Tl = gsap.timeline({
     scrollTrigger: {
         trigger: '.section2',
         start: 'top center',
-        end: '+=600',
+        end: '+=400',
         scrub: 1,
         yoyo: true,
         markers: true,
@@ -95,3 +95,24 @@ section2Tl
     duration: 5,
     ease: 'power4.out',
 });
+
+//section 3
+const section3Tl = gsap.timeline({
+    scrollTrigger: {
+        trigger: '.section3',
+        start: 'top center',
+        end: '+=400',
+        scrub: 1,
+        yoyo: true,
+        markers: true,
+        toggleActions: 'restart pause resume none',
+    }
+});
+
+//skills
+section3Tl
+.from('.section3 h2', {
+    scale: 3,
+    duration: 2,
+    ease: 'power4.out',
+})
