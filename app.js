@@ -101,7 +101,7 @@ const section3Tl = gsap.timeline({
     scrollTrigger: {
         trigger: '.section3',
         start: 'center bottom',
-        end: '+=700',
+        end: '+=600',
         scrub: 1,
         markers: true,
         toggleActions: 'restart pause resume none',
@@ -115,6 +115,7 @@ section3Tl.from('.section3 h2', {
     ease: 'power4.out',
 });
 
+//spans
 const spans = document.querySelectorAll('.section3 p span');
 
 spans.forEach((span, index) => {
@@ -135,7 +136,7 @@ spans.forEach((span, index) => {
 const section4Tl = gsap.timeline({
     scrollTrigger: {
         trigger: '.section3',
-        start: 'center bottom',
+        start: 'bottom top',
         end: '+=600',
         scrub: true,
         markers: true,
@@ -145,7 +146,23 @@ const section4Tl = gsap.timeline({
 
 //section4 horizontally
 section4Tl.to('.section4', {
-    x: '100vw',
+    x: '0vw',
     duration: 3,
     ease: 'power4.out',
+});
+
+//horizontal scroll
+let horizontalSections = document.querySelectorAll('.horizontal-sections > section');
+
+gsap.to(horizontalSections, {
+    xPercent: -100 * (horizontalSections.length - 1),
+    ease: 'none',
+    scrollTrigger: {
+        trigger: '.horizontal-sections',
+        pin: true,
+        scrub: 1,
+        snap: 1 / (horizontalSections.length - 1),
+        end: () => "+=" + document.querySelector('.horizontal-sections').offsetWidth,
+        markers: true,
+    }
 });
