@@ -103,7 +103,6 @@ const section3Tl = gsap.timeline({
         start: 'top center',
         end: '+=400',
         scrub: 1,
-        yoyo: true,
         markers: true,
         toggleActions: 'restart pause resume none',
     }
@@ -115,4 +114,62 @@ section3Tl
     scale: 3,
     duration: 2,
     ease: 'power4.out',
-})
+});
+
+//spans
+section3Tl.fromTo('.section3 p span:first-child', {
+    y: '100vh',
+    duration: 2,
+    ease: 'power4.out',
+    backgroundColor: 'white',
+    color: 'black',
+}, {
+    y: '0vh',
+    duration: 2,
+    ease: 'power4.out',
+    backgroundColor: 'white',
+    color: 'black',
+});
+
+
+section3Tl.fromTo('.section3 p span:nth-child(2)', {
+    y: '100vh',
+    duration: 2,
+    ease: 'power4.out',
+    backgroundColor: 'white',
+    color: 'black',
+}, {
+    y: '0vh',
+    duration: 2,
+    ease: 'power4.out',
+    backgroundColor: 'white',
+    color: 'black',
+});
+
+section3Tl.fromTo('.section3 p span:nth-child(3)', {
+    y: '100vh',
+    duration: 2,
+    ease: 'power4.out',
+    backgroundColor: 'white',
+    color: 'black',
+}, {
+    y: '0vh',
+    duration: 2,
+    ease: 'power4.out',
+    backgroundColor: 'white',
+    color: 'black',
+});
+
+section3Tl.fromTo('.section3 p span:nth-child(4)', {
+    y: '100vh',
+    duration: 2,
+    ease: 'power4.out',
+    backgroundColor: 'white',
+    color: 'black',
+}, {
+    y: '0vh',
+    duration: 2,
+    ease: 'power4.out',
+    backgroundColor: 'white',
+    color: 'black',
+});
